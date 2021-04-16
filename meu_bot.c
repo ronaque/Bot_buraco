@@ -100,15 +100,12 @@ void valorCarta(char* carta, Carta* mao){
 
 void tratamentoNaipe(Carta* mao, Carta* maoCopas, Carta* maoOuro, Carta* maoEspadas, Carta* maoPaus)
 {
-  FILE* tratamento = fopen("tratamento", "w");
-  fprintf(tratamento,"oi");
-
   if((strcmp(mao->naipe, "♥") == 0))
   {
+    // maoCopas = realloc(maoCopas, sizeof(Carta) * (indexCopas + 1));
     strcpy(maoCopas[indexCopas].naipe, mao->naipe);
     maoCopas[indexCopas].numero = mao->numero;
     indexCopas++;
-    // maoCopas = realloc(maoCopas, sizeof(Carta*) *(indexCopas + 1));
   }
   if((strcmp(mao->naipe, "♦") == 0))
   {
@@ -207,12 +204,12 @@ int main() {
   Carta *lixo;
 
   mao = malloc(sizeof(Carta) * 11);
-  maoCopas = malloc(sizeof(Carta) * 14);
-  maoOuro = malloc(sizeof(Carta) * 14);
-  maoEspadas = malloc(sizeof(Carta) * 14);
-  maoPaus = malloc(sizeof(Carta) * 14);
+  maoCopas = malloc(sizeof(Carta) * (indexCopas + 1));
+  maoOuro = malloc(sizeof(Carta) * indexOuro + 1);
+  maoEspadas = malloc(sizeof(Carta) * indexEspadas + 1);
+  maoPaus = malloc(sizeof(Carta) * indexPaus + 1);
 
-  lixo = malloc(sizeof(Carta) * 2);
+  lixo = malloc(sizeof(Carta) * indexLixo + 1);
 
 
   // DADOS DO INÍCIO DA PARTIDA
@@ -247,6 +244,13 @@ int main() {
     valorCarta(cartas, &mao[i]);
 
     //Separação da mão em naipes
+    //Realocamento da memória
+    maoCopas = realloc(maoCopas, sizeof(Carta) * (indexCopas + 1));
+    maoOuro = realloc(maoOuro, sizeof(Carta) * (indexOuro + 1));
+    maoEspadas = realloc(maoEspadas, sizeof(Carta) * (indexEspadas + 1));
+    maoPaus = realloc(maoPaus, sizeof(Carta) * (indexPaus + 1));
+
+    //tratamento
     tratamentoNaipe(&mao[i], maoCopas, maoOuro, maoEspadas, maoPaus);
     
     //Printa a carta atual
@@ -292,7 +296,8 @@ int main() {
   
 
   //Print carta do lixo
-  fprintf(saida, "Carta do lixo: %d%s\n", lixo[indexLixo].numero, lixo[indexLixo].naipe);
+  fprintf(saida, "Carta inicial do lixo: %d%s\n", lixo[indexLixo].numero, lixo[indexLixo].naipe);
+  fprintf(saida, "index Lixo: %d\n", indexLixo);
 
   indexLixo++;
 
@@ -307,30 +312,35 @@ int main() {
       readline(line);     
 
       // exemplo de saída para debugar
-      // fprintf(saida, "Loop: %s", line);  
+      //fprintf(saida, "Loop: %s\n", line);  
 
       //Verificar se o adversario deu o comando discard para atualizar o lixo
       sscanf(line, "%s", loop);
-      // fprintf(saida,"variavel loop: %s\n", loop);
+      //fprintf(saida,"variavel loop: %s\n", loop);
 
       if(strcmp(loop, "DISCARD") == 0)
       {
         descarte = strtok(line, " ");
         descarte = strtok(NULL, " ");
         fprintf(saida, "Descarte: %s\n", descarte);
+
+        lixo = realloc(lixo, sizeof(Carta) * (indexLixo + 1));
+        fprintf(saida, "Index Lixo: %d\n", indexLixo);
         valorCarta(descarte, &lixo[indexLixo]);
+
         fprintf(saida, "Topo do lixo: %d%s\n", lixo[indexLixo].numero, lixo[indexLixo].naipe);
         indexLixo++;
-        // lixo = realloc(lixo, sizeof(Carta *) * (indexLixo + 1));
+        
       }
 
 
       //Verificar se o adversario deu o comando GET_DISCARD, neste caso é necessario zerar o lixo
-
-
+      if(strcmp(line, "GET_DISCARD") == 0)
+      {
+        free(lixo);
+      }
     } while (strcmp(line, myId)); // sai do laço quando for a sua vez!
 
-    //Envia a ação para puxar uma carta
     for (i = 0; i < indexLixo; i++)
     {
       fprintf(saida, "%d%s ", lixo[i].numero, lixo[i].naipe);
