@@ -1,6 +1,6 @@
 //gcc meu_bot.c -o meu_bot -g -w
 //node buraco.js meu_bot bot
-//node buraco -i test_files/game1.in bot
+//node buraco.js -i test_files/teste.txt meu_bot bot
 
 //gcc meu_bot.c -o meu_bot_debug -fsanitize=address,undefined -g
 //node buraco.js meu_bot_debug bot
@@ -53,9 +53,109 @@ void bubblesortNaipes(Carta *mao, int index)
     }
 }
 
-char *puxar()
+char *puxar(Carta* lixo, Carta* maoCopas, Carta* maoOuro, Carta* maoEspadas, Carta* maoPaus)
 {
-    return "GET_STOCK";
+  int i;
+  char getDiscard[MAX_LINE];
+
+  if((strcmp(lixo->naipe, "♥") == 0))
+  {
+    for (i = 0; i < indexCopas; i++)
+    {
+      //Valor de lixo está entre 2 valores
+      if (lixo->numero == maoCopas[i].numero + 1 && lixo->numero == maoCopas[i + 1].numero - 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está depois dos 2 valores
+      else if (lixo->numero == maoCopas[i].numero + 2 && lixo->numero == maoCopas[i + 1].numero + 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está antes dos 2 valores
+      else if (lixo->numero == maoCopas[i].numero - 1 && lixo->numero == maoCopas[i + 1].numero - 2)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
+        return getDiscard;
+      }
+    }
+  }
+  if ((strcmp(lixo->naipe, "♦") == 0))
+  {
+    for (i = 0; i < indexOuro; i++)
+    {
+      //Valor de lixo está entre 2 valores
+      if (lixo->numero == maoOuro[i].numero + 1 && lixo->numero == maoOuro[i + 1].numero - 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está depois dos 2 valores
+      else if (lixo->numero == maoOuro[i].numero + 2 && lixo->numero == maoOuro[i + 1].numero + 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está antes dos 2 valores
+      else if (lixo->numero == maoOuro[i].numero - 1 && lixo->numero == maoOuro[i + 1].numero - 2)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
+        return getDiscard;
+      }
+    }
+  }
+  if ((strcmp(lixo->naipe, "♠") == 0))
+  {
+    for (i = 0; i < indexEspadas; i++)
+    {
+      //Valor de lixo está entre 2 valores
+      if (lixo->numero == maoEspadas[i].numero + 1 && lixo->numero == maoEspadas[i + 1].numero - 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está depois dos 2 valores
+      else if (lixo->numero == maoEspadas[i].numero + 2 && lixo->numero == maoEspadas[i + 1].numero + 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está antes dos 2 valores
+      else if (lixo->numero == maoEspadas[i].numero - 1 && lixo->numero == maoEspadas[i + 1].numero - 2)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
+        return getDiscard;
+      }
+    }
+  }
+  if ((strcmp(lixo->naipe, "♣") == 0))
+  {
+    for (i = 0; i < indexPaus; i++)
+    {
+      //Valor de lixo está entre 2 valores
+      if (lixo->numero == maoPaus[i].numero + 1 && lixo->numero == maoPaus[i + 1].numero - 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está depois dos 2 valores
+      else if (lixo->numero == maoPaus[i].numero + 2 && lixo->numero == maoPaus[i + 1].numero + 1)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
+        return getDiscard;
+      }
+      //Valor de lixo está antes dos 2 valores
+      else if (lixo->numero == maoPaus[i].numero - 1 && lixo->numero == maoPaus[i + 1].numero - 2)
+      {
+        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
+        return getDiscard;
+      }
+    }
+  }
+
+  return "GET_STOCK";
 }
 
 void valorCarta(char *carta, Carta *mao)
@@ -170,6 +270,58 @@ void printMaoNaipes(Carta *mao, Carta *maoCopas, Carta *maoOuro, Carta *maoEspad
     fprintf(saida, "] index: %d\n", indexPaus);
 }
 
+void verificacaoSequencias(Carta *mao, int index)
+{
+
+  FILE* sequencias = fopen("sequencias", "w");
+
+  fprintf(sequencias, "Naipe: %s, Index: %d\n", mao->naipe, index);
+  
+  int i;
+  int tamSequencia = 1;
+  int indexarrayMao = 0;
+  int arrayMao[index];
+
+  for (i = 0; i < index; i++)
+  {
+      fprintf(sequencias, "%d%s ", mao[i].numero, mao[i].naipe);
+  }
+  fprintf(sequencias,"\n");
+
+  for (i = 0; i < index; i++)
+  {
+    if(mao[i].numero == mao[i + 1].numero - 1)
+    {
+      tamSequencia++;
+      arrayMao[indexarrayMao] = mao[i].numero;
+      indexarrayMao++;
+      if (mao[i + 2].numero == 0)
+      {
+        arrayMao[indexarrayMao] = mao[i + 1].numero;
+        indexarrayMao++;
+      }
+    }
+    else{
+      if (tamSequencia > 3)
+      {
+        //Formar jogo na mesa
+      }
+      else{
+      tamSequencia = 0;
+      indexarrayMao = 0;
+      }
+    }
+  }
+  fprintf(sequencias, "Tamanho da sequencia: %d\n", tamSequencia);
+
+  for(i = 0; i < indexarrayMao; i++)
+  {
+    fprintf(sequencias, "%d ", arrayMao[i]);
+  }
+
+  fclose(sequencias);
+}
+
 int main()
 {
     char line[MAX_LINE]; // dados temporários
@@ -253,18 +405,14 @@ int main()
         cartas = strtok(NULL, " ");
     }
 
-    //
-
-    //Libera a mão inicial
-    // free(mao);
-
     //Ordenação das mãos iniciais de cada naipe
     bubblesortNaipes(maoCopas, indexCopas);
     bubblesortNaipes(maoOuro, indexOuro);
     bubblesortNaipes(maoEspadas, indexEspadas);
     bubblesortNaipes(maoPaus, indexPaus);
-
     //
+
+    verificacaoSequencias(maoCopas, indexCopas);
 
     //Print da mao dividida em naipes
     printMaoNaipes(&mao[i], maoCopas, maoOuro, maoEspadas, maoPaus, saida);
@@ -289,6 +437,9 @@ int main()
 
     fprintf(saida, "\n");
     fprintf(saida, "\n");
+
+    //Libera a mão inicial
+    free(mao);
 
     //Loop infinito gerenciado pelo juiz
     while (1)
@@ -323,6 +474,7 @@ int main()
             if (strcmp(line, "GET_DISCARD") == 0)
             {
                 free(lixo);
+                indexLixo = 0;
             }
         } while (strcmp(line, myId)); // sai do laço quando for a sua vez!
 
@@ -335,48 +487,48 @@ int main()
         //Envia a ação para puxar uma carta
 
         //Tratamento de qual puxe quer fazer
-        char *acaoPuxar = puxar();
-        // fprintf(saida, "acao puxar: %s\n", acaoPuxar);
+        char *acaoPuxar = puxar(&lixo[indexLixo], maoCopas, maoOuro, maoEspadas, maoPaus);
+
+        //Enviar qual puxe vai fazer
         printf("%s\n", acaoPuxar);
 
-        //Recebe a carta que puxou
-        readline(line);
-        fprintf(saida, "Carta do deque de compra: %s\n", line);
 
-        //Recebimento da carta para a mão geral
-        valorCarta(line, &mao[0]);
-        fprintf(saida, "Carta recebida: %d%s\n", mao[0].numero, mao[0].naipe);
+        //Puxar do deque de compra
+          //Recebe a carta do deque de compra
+          readline(line);
+          fprintf(saida, "Carta do deque de compra: %s\n",  line);
 
-        //Separação da carta recebida para o naipe correspondente
-        maoCopas = realloc(maoCopas, sizeof(Carta) * (indexCopas + 1));
-        maoOuro = realloc(maoOuro, sizeof(Carta) * (indexOuro + 1));
-        maoEspadas = realloc(maoEspadas, sizeof(Carta) * (indexEspadas + 1));
-        maoPaus = realloc(maoPaus, sizeof(Carta) * (indexPaus + 1));
+          //Recebimento da carta para a mão geral
+          mao = realloc(mao, sizeof(Carta) * 1);
+          valorCarta(line, &mao[0]);
+          fprintf(saida, "Carta recebida: %d%s\n", mao[0] .numero, mao[0].naipe);
 
-        tratamentoNaipe(&mao[0], maoCopas, maoOuro, maoEspadas, maoPaus);
+          //Separação da carta recebida para o naipe  correspondente
+          maoCopas = realloc(maoCopas, sizeof(Carta) *  (indexCopas + 1));
+          maoOuro = realloc(maoOuro, sizeof(Carta) *  (indexOuro + 1));
+          maoEspadas = realloc(maoEspadas, sizeof(Carta) *  (indexEspadas + 1));
+          maoPaus = realloc(maoPaus, sizeof(Carta) *  (indexPaus + 1));
 
-        //Ordenação das mãos de cada naipe
-        bubblesortNaipes(maoCopas, indexCopas);
-        bubblesortNaipes(maoOuro, indexOuro);
-        bubblesortNaipes(maoEspadas, indexEspadas);
-        bubblesortNaipes(maoPaus, indexPaus);
+          tratamentoNaipe(&mao[0], maoCopas, maoOuro,   maoEspadas, maoPaus);
+
+          //Ordenação das mãos de cada naipe
+          bubblesortNaipes(maoCopas, indexCopas);
+          bubblesortNaipes(maoOuro, indexOuro);
+          bubblesortNaipes(maoEspadas, indexEspadas);
+          bubblesortNaipes(maoPaus, indexPaus);
+          //
+
+          //Print das mãos
+          printMaoNaipes(&mao[i], maoCopas, maoOuro,  maoEspadas, maoPaus, saida);
+
+          fprintf(saida, "\n");
+          fprintf(saida, "\n");
+
         //
-
-        //Print das mãos
-        printMaoNaipes(&mao[i], maoCopas, maoOuro, maoEspadas, maoPaus, saida);
-
-        fprintf(saida, "\n");
-        fprintf(saida, "\n");
-
+        
         //Descarta a carta que puxou
         printf("DISCARD %s\n", line);
     }
 
     return 0;
 }
-
-//Dicas
-//4 vetores para cada naipe
-//Ordenar os 4 vetores de forma crescente
-
-//Verificações do A e do 2 a parte na hora de montar jogos
