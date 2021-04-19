@@ -1,0 +1,1 @@
+char *puxar(Carta *lixo, Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPaus);

@@ -168,43 +168,6 @@ void printMaoNaipes(Carta *mao, Carta *maoCopas, Carta *maoOuro, Carta *maoEspad
     fprintf(saida, "] index: %d\n", indexPaus);
 }
 
-void verificacaoSequencias(Carta *mao, int index)
-{
-    int i;
-    int tamSequencia = 1;
-    int indexarrayMao = 0;
-    int arrayMao[index];
-
-
-
-    for (i = 0; i < index; i++)
-    {
-        if (mao[i].numero == mao[i + 1].numero - 1)
-        {
-            tamSequencia++;
-            arrayMao[indexarrayMao] = mao[i].numero;
-            indexarrayMao++;
-            if (mao[i + 2].numero == 0)
-            {
-                arrayMao[indexarrayMao] = mao[i + 1].numero;
-                indexarrayMao++;
-            }
-        }
-        else
-        {
-            if (tamSequencia > 3)
-            {
-                //Formar jogo na mesa
-            }
-            else
-            {
-                tamSequencia = 0;
-                indexarrayMao = 0;
-            }
-        }
-    }
-}
-
 char checarValor(int valor)
 {
     if (valor == 1)
@@ -239,7 +202,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
 
     char valor;
 
-    FILE* saida = fopen("descarte", "w");
+  
 
     //Procurar por cartas iguais
       //Cartas iguais copas
@@ -247,7 +210,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (maoCopas[i].numero == maoCopas[i + 1].numero)
           {
-            fprintf(saida,"cartas iguais copas");
+            
             valor = checarValor(maoCopas[i].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoCopas[i].naipe);
@@ -255,7 +218,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoCopas[i].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
       }
@@ -264,7 +227,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (maoOuro[i].numero == maoOuro[i + 1].numero)
           {
-            fprintf(saida,"cartas iguais ouro");
+            
             valor = checarValor(maoOuro[i].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoOuro[i].naipe);
@@ -272,7 +235,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoOuro[i].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
       }
@@ -281,7 +244,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (maoEspadas[i].numero == maoEspadas[i + 1] .numero)
           {
-            fprintf(saida,"cartas iguais espadas");
+            
             valor = checarValor(maoEspadas[i].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoEspadas[i].naipe);
@@ -289,7 +252,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoEspadas[i].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
       }
@@ -298,7 +261,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (maoPaus[i].numero == maoPaus[i + 1].numero)
           {
-            fprintf(saida,"cartas iguais paus");
+            
             valor = checarValor(maoPaus[i].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoPaus[i].naipe);
@@ -306,7 +269,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoPaus[i].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
       }
@@ -318,7 +281,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (indexCopas == 1)
           {
-            fprintf(saida,"index copas 1");
+            
             valor = checarValor(maoCopas[0].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoCopas[0].naipe);
@@ -326,7 +289,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoCopas[0].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
           else
@@ -349,7 +312,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
                   }
               }
           }
-          fprintf(saida,"valor distante copas\n");
+          
           valor = checarValor(maoCopas[indexDistancia].numero);
           if(valor == '1'){
             sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoCopas[indexDistancia].naipe);
@@ -357,8 +320,8 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
           else{
           sprintf(discardCard, "DISCARD %c%s",valor,maoCopas[indexDistancia].naipe);
           }
-          // fprintf(saida, "%s", discardCard);
-          fclose(saida);
+          // 
+         
           return discardCard;
       }
       //Menor index Ouro
@@ -366,7 +329,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (indexOuro == 1)
           {
-            fprintf(saida,"index ouro 1");
+            
             valor = checarValor(maoOuro[0].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoOuro[0].naipe);
@@ -374,7 +337,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoOuro[0].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
           else
@@ -397,7 +360,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
                   }
               }
           }
-          fprintf(saida,"valor distante ouro");
+          
           valor = checarValor(maoOuro[indexDistancia].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoOuro[indexDistancia].naipe);
@@ -405,7 +368,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoOuro[indexDistancia].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
       }
       //Menor index Espadas
@@ -413,7 +376,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (indexEspadas == 1)
           {
-            fprintf(saida,"index espadas 1");
+            
             valor = checarValor(maoEspadas[0].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoEspadas[0].naipe);
@@ -421,7 +384,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
               sprintf(discardCard, "DISCARD %c%s",valor, maoEspadas[0].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
           else
@@ -444,7 +407,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
                   }
               }
           }
-          fprintf(saida,"valor distante espadas");
+          
           valor = checarValor(maoEspadas[indexDistancia].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoEspadas[indexDistancia].naipe);
@@ -452,7 +415,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoEspadas[indexDistancia].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
       }
       //Menor index Paus
@@ -460,7 +423,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
       {
           if (indexPaus == 1)
           {
-            fprintf(saida,"index paus 1");
+            
             valor = checarValor(maoPaus[0].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoPaus[0].naipe);
@@ -468,7 +431,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoPaus[0].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
           }
           else
@@ -491,7 +454,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
                   }
               }
           }
-          fprintf(saida,"valor distante paus");
+          
           valor = checarValor(maoPaus[indexDistancia].numero);
             if(valor == '1'){
               sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoPaus[indexDistancia].naipe);
@@ -499,11 +462,11 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
             else{
             sprintf(discardCard, "DISCARD %c%s",valor, maoPaus[indexDistancia].naipe);
             }
-            fclose(saida);
+           
             return discardCard;
       }
     //
-    fprintf(saida, "nada");
+    
 
     valor = checarValor(maoCopas[0].numero);
     if(valor == '1'){
@@ -513,7 +476,7 @@ char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPa
     sprintf(discardCard, "DISCARD %c%s",valor, maoCopas[0].naipe);
     }
 
-    fclose(saida);
+   
     return discardCard;
 }
 
@@ -827,7 +790,6 @@ int main()
     bubblesortNaipes(maoPaus, indexPaus);
     //
 
-    verificacaoSequencias(maoCopas, indexCopas);
 
     //Print da mao dividida em naipes
     printMaoNaipes(&mao[i], maoCopas, maoOuro, maoEspadas, maoPaus, saida);
