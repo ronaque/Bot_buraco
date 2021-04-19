@@ -1,21 +1,21 @@
 Indentificadores de todos bots: p1.meu_bot p2.bot
 Identificador do meu bot: p1.meu_bot myID: p1.meu_bot
-Cartas iniciais: [ 6♠ 5♦ 9♣ 7♦ 2♣ 2♥ 6♦ A♠ 6♣ 5♥ 3♦ ]
-Carta[0]: 6♠
-Carta[1]: 5♦
-Carta[2]: 9♣
-Carta[3]: 7♦
-Carta[4]: 2♣
-Carta[5]: 2♥
-Carta[6]: 6♦
-Carta[7]: 1♠
-Carta[8]: 6♣
-Carta[9]: 5♥
-Carta[10]: 3♦
-Mao copas: [ 2♥ 5♥ ] index: 2
-Mao ouro: [ 3♦ 5♦ 6♦ 7♦ ] index: 4
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ ] index: 3
+Cartas iniciais: [ 9♣ 9♠ J♣ A♣ 9♥ 4♠ 8♠ 10♣ 5♣ 10♥ 8♦ ]
+Carta[0]: 9♣
+Carta[1]: 9♠
+Carta[2]: 11♣
+Carta[3]: 1♣
+Carta[4]: 9♥
+Carta[5]: 4♠
+Carta[6]: 8♠
+Carta[7]: 10♣
+Carta[8]: 5♣
+Carta[9]: 10♥
+Carta[10]: 8♦
+Mao copas: [ 9♥ 10♥ ] index: 2
+Mao ouro: [ 8♦ ] index: 1
+Mao espadas: [ 4♠ 8♠ 9♠ ] index: 3
+Mao Paus: [ 1♣ 5♣ 9♣ 10♣ 11♣ ] index: 5
 
 
 lixo: J♥
@@ -23,491 +23,38 @@ Carta do lixo: 11♥
 
 
 11♥ index lixo: 1
-Carta do deque de compra: K♦
-Carta recebida: 13♦
-Mao copas: [ 2♥ 5♥ ] index: 2
-Mao ouro: [ 3♦ 5♦ 6♦ 7♦ 13♦ ] index: 5
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ ] index: 3
-
-
-Descarte: 5♦
-Index Lixo: 1
-Topo do lixo: 5♦
-11♥ 5♦ index lixo: 2
-Carta do deque de compra: K♣
-Carta recebida: 13♣
-Mao copas: [ 2♥ 5♥ ] index: 2
-Mao ouro: [ 3♦ 5♦ 6♦ 7♦ 13♦ ] index: 5
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: 10♣
-Index Lixo: 2
-Topo do lixo: 10♣
-11♥ 5♦ 10♣ index lixo: 3
-Carta do deque de compra: 10♦
-Carta recebida: 10♦
-Mao copas: [ 2♥ 5♥ ] index: 2
-Mao ouro: [ 3♦ 5♦ 6♦ 7♦ 10♦ 13♦ ] index: 6
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: K♥
-Index Lixo: 3
-Topo do lixo: 13♥
-11♥ 5♦ 10♣ 13♥ index lixo: 4
-Carta do deque de compra: J♥
-Carta recebida: 11♥
-Mao copas: [ 2♥ 5♥ 11♥ ] index: 3
-Mao ouro: [ 3♦ 5♦ 6♦ 7♦ 10♦ 13♦ ] index: 6
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: 3♠
-Index Lixo: 4
-Topo do lixo: 3♠
-11♥ 5♦ 10♣ 13♥ 3♠ index lixo: 5
-Carta do deque de compra: K♦
-Carta recebida: 13♦
-Mao copas: [ 2♥ 5♥ 11♥ ] index: 3
-Mao ouro: [ 3♦ 5♦ 6♦ 7♦ 10♦ 13♦ 13♦ ] index: 7
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: 3♠
-Index Lixo: 5
-Topo do lixo: 3♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ index lixo: 6
-Carta do deque de compra: A♦
-Carta recebida: 1♦
-Mao copas: [ 2♥ 5♥ 11♥ ] index: 3
-Mao ouro: [ 1♦ 3♦ 5♦ 6♦ 7♦ 10♦ 13♦ 13♦ ] index: 8
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: 9♠
-Index Lixo: 6
-Topo do lixo: 9♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ index lixo: 7
-Carta do deque de compra: 6♦
-Carta recebida: 6♦
-Mao copas: [ 2♥ 5♥ 11♥ ] index: 3
-Mao ouro: [ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 10♦ 13♦ 13♦ ] index: 9
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: J♠
-Index Lixo: 7
-Topo do lixo: 11♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ index lixo: 8
-Carta do deque de compra: 8♦
-Carta recebida: 8♦
-Mao copas: [ 2♥ 5♥ 11♥ ] index: 3
-Mao ouro: [ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 10
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: 4♠
-Index Lixo: 8
-Topo do lixo: 4♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ index lixo: 9
-Carta do deque de compra: A♦
-Carta recebida: 1♦
-Mao copas: [ 2♥ 5♥ 11♥ ] index: 3
-Mao ouro: [ 1♦ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 11
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: 7♠
-Index Lixo: 9
-Topo do lixo: 7♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ index lixo: 10
-Carta do deque de compra: 4♥
-Carta recebida: 4♥
-Mao copas: [ 2♥ 4♥ 5♥ 11♥ ] index: 4
-Mao ouro: [ 1♦ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 11
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 6♣ 9♣ 13♣ ] index: 4
-
-
-Descarte: 8♣
-Index Lixo: 10
-Topo do lixo: 8♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ index lixo: 11
-Carta do deque de compra: 4♣
-Carta recebida: 4♣
-Mao copas: [ 2♥ 4♥ 5♥ 11♥ ] index: 4
-Mao ouro: [ 1♦ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 11
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 13♣ ] index: 5
-
-
-Descarte: 9♦
-Index Lixo: 11
-Topo do lixo: 9♦
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ index lixo: 12
-Carta do deque de compra: 9♥
-Carta recebida: 9♥
-Mao copas: [ 2♥ 4♥ 5♥ 9♥ 11♥ ] index: 5
-Mao ouro: [ 1♦ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 11
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 13♣ ] index: 5
-
-
-Descarte: 10♣
-Index Lixo: 12
-Topo do lixo: 10♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ index lixo: 13
-Carta do deque de compra: A♥
-Carta recebida: 1♥
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 9♥ 11♥ ] index: 6
-Mao ouro: [ 1♦ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 11
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 13♣ ] index: 5
-
-
-Descarte: 9♦
-Index Lixo: 13
-Topo do lixo: 9♦
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ index lixo: 14
-Carta do deque de compra: Q♣
-Carta recebida: 12♣
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 9♥ 11♥ ] index: 6
-Mao ouro: [ 1♦ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 11
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 6
-
-
-Descarte: 5♥
-Index Lixo: 14
-Topo do lixo: 5♥
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ index lixo: 15
-Carta do deque de compra: 6♥
-Carta recebida: 6♥
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ ] index: 7
-Mao ouro: [ 1♦ 1♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 11
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 6
-
-
-Descarte: K♠
-Index Lixo: 15
-Topo do lixo: 13♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ index lixo: 16
-Carta do deque de compra: 3♦
-Carta recebida: 3♦
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ ] index: 7
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 12
-Mao espadas: [ 1♠ 6♠ ] index: 2
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 6
-
-
-Descarte: 5♣
-Index Lixo: 16
-Topo do lixo: 5♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ index lixo: 17
-Carta do deque de compra: 10♠
-Carta recebida: 10♠
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ ] index: 7
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 12
-Mao espadas: [ 1♠ 6♠ 10♠ ] index: 3
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 6
-
-
-Descarte: 7♥
-Index Lixo: 17
-Topo do lixo: 7♥
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ index lixo: 18
-Carta do deque de compra: Q♥
-Carta recebida: 12♥
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 12
-Mao espadas: [ 1♠ 6♠ 10♠ ] index: 3
-Mao Paus: [ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 6
-
-
-Descarte: 2♠
-Index Lixo: 18
-Topo do lixo: 2♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ index lixo: 19
-Carta do deque de compra: 2♣
-Carta recebida: 2♣
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 12
-Mao espadas: [ 1♠ 6♠ 10♠ ] index: 3
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
-
-
-Descarte: 5♣
-Index Lixo: 19
-Topo do lixo: 5♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ index lixo: 20
-Carta do deque de compra: 8♠
-Carta recebida: 8♠
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 12
-Mao espadas: [ 1♠ 6♠ 8♠ 10♠ ] index: 4
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
-
-
-Descarte: A♥
-Index Lixo: 20
-Topo do lixo: 1♥
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ index lixo: 21
-Carta do deque de compra: J♠
-Carta recebida: 11♠
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 13♦ 13♦ ] index: 12
-Mao espadas: [ 1♠ 6♠ 8♠ 10♠ 11♠ ] index: 5
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
-
-
-Descarte: 10♦
-Index Lixo: 21
-Topo do lixo: 10♦
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ index lixo: 22
-Carta do deque de compra: Q♦
-Carta recebida: 12♦
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 13
-Mao espadas: [ 1♠ 6♠ 8♠ 10♠ 11♠ ] index: 5
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
+GET_DISCARD [ 9♥ 10♥ ]
+Carta do deque de compra: [  ]
+Carta recebida: 43]
+Mao copas: [ 9♥ 10♥ ] index: 2
+Mao ouro: [ 8♦ ] index: 1
+Mao espadas: [ 4♠ 8♠ 9♠ ] index: 3
+Mao Paus: [ 1♣ 5♣ 9♣ 10♣ 11♣ ] index: 5
 
 
 Descarte: 4♣
-Index Lixo: 22
+Index Lixo: 1
 Topo do lixo: 4♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ index lixo: 23
-Carta do deque de compra: 4♦
-Carta recebida: 4♦
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 14
-Mao espadas: [ 1♠ 6♠ 8♠ 10♠ 11♠ ] index: 5
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
+11♥ 4♣ index lixo: 2
+GET_STOCK
+Carta do deque de compra: 2♦
+Carta recebida: 2♦
+Mao copas: [ 9♥ 10♥ ] index: 2
+Mao ouro: [ 2♦ 8♦ ] index: 2
+Mao espadas: [ 4♠ 8♠ 9♠ ] index: 3
+Mao Paus: [ 1♣ 5♣ 9♣ 10♣ 11♣ ] index: 5
 
 
-Descarte: 8♠
-Index Lixo: 23
-Topo do lixo: 8♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ index lixo: 24
-Carta do deque de compra: 4♦
-Carta recebida: 4♦
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 15
-Mao espadas: [ 1♠ 6♠ 8♠ 10♠ 11♠ ] index: 5
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
-
-
-Descarte: 4♥
-Index Lixo: 24
-Topo do lixo: 4♥
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ index lixo: 25
-Carta do deque de compra: 4♠
-Carta recebida: 4♠
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 11♥ 12♥ ] index: 8
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 15
-Mao espadas: [ 1♠ 4♠ 6♠ 8♠ 10♠ 11♠ ] index: 6
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
-
-
-Descarte: J♣
-Index Lixo: 25
-Topo do lixo: 11♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ index lixo: 26
-Carta do deque de compra: 9♥
-Carta recebida: 9♥
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 9
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 15
-Mao espadas: [ 1♠ 4♠ 6♠ 8♠ 10♠ 11♠ ] index: 6
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 9♣ 12♣ 13♣ ] index: 7
-
-
-Descarte: 7♦
-Index Lixo: 26
-Topo do lixo: 7♦
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ index lixo: 27
-Carta do deque de compra: 8♣
-Carta recebida: 8♣
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 9
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 15
-Mao espadas: [ 1♠ 4♠ 6♠ 8♠ 10♠ 11♠ ] index: 6
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 8♣ 9♣ 12♣ 13♣ ] index: 8
-
-
-Descarte: J♦
-Index Lixo: 27
-Topo do lixo: 11♦
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ index lixo: 28
-Carta do deque de compra: 10♠
-Carta recebida: 10♠
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 9
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 15
-Mao espadas: [ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ ] index: 7
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 8♣ 9♣ 12♣ 13♣ ] index: 8
-
-
-Descarte: J♦
-Index Lixo: 28
-Topo do lixo: 11♦
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ index lixo: 29
-Carta do deque de compra: 8♦
-Carta recebida: 8♦
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 9
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ ] index: 7
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 8♣ 9♣ 12♣ 13♣ ] index: 8
-
-
-Descarte: A♣
-Index Lixo: 29
-Topo do lixo: 1♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ index lixo: 30
-Carta do deque de compra: A♠
-Carta recebida: 1♠
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 9
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ ] index: 8
-Mao Paus: [ 2♣ 2♣ 4♣ 6♣ 8♣ 9♣ 12♣ 13♣ ] index: 8
-
-
-Descarte: 3♥
-Index Lixo: 30
-Topo do lixo: 3♥
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ index lixo: 31
-Carta do deque de compra: 3♣
-Carta recebida: 3♣
-Mao copas: [ 1♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 9
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ ] index: 8
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 8♣ 9♣ 12♣ 13♣ ] index: 9
-
-
-Descarte: J♣
-Index Lixo: 31
-Topo do lixo: 11♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ index lixo: 32
-Carta do deque de compra: 2♥
-Carta recebida: 2♥
-Mao copas: [ 1♥ 2♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 10
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ ] index: 8
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 8♣ 9♣ 12♣ 13♣ ] index: 9
-
-
-Descarte: 2♦
-Index Lixo: 32
-Topo do lixo: 2♦
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ index lixo: 33
-Carta do deque de compra: K♠
-Carta recebida: 13♠
-Mao copas: [ 1♥ 2♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 10
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ 13♠ ] index: 9
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 8♣ 9♣ 12♣ 13♣ ] index: 9
-
-
-Descarte: 7♣
-Index Lixo: 33
-Topo do lixo: 7♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ index lixo: 34
-Carta do deque de compra: Q♣
-Carta recebida: 12♣
-Mao copas: [ 1♥ 2♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 10
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ 13♠ ] index: 9
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ ] index: 10
-
-
-Descarte: 2♠
-Index Lixo: 34
-Topo do lixo: 2♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ 2♠ index lixo: 35
+Descarte: 10♦
+Index Lixo: 2
+Topo do lixo: 10♦
+11♥ 4♣ 10♦ index lixo: 3
+GET_STOCK
 Carta do deque de compra: Q♠
 Carta recebida: 12♠
-Mao copas: [ 1♥ 2♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 10
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ 12♠ 13♠ ] index: 10
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ ] index: 10
-
-
-Descarte: 3♣
-Index Lixo: 35
-Topo do lixo: 3♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ 2♠ 3♣ index lixo: 36
-Carta do deque de compra: 6♣
-Carta recebida: 6♣
-Mao copas: [ 1♥ 2♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 11♥ 12♥ ] index: 10
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ 12♠ 13♠ ] index: 10
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ ] index: 11
-
-
-Descarte: A♣
-Index Lixo: 36
-Topo do lixo: 1♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ 2♠ 3♣ 1♣ index lixo: 37
-Carta do deque de compra: 10♥
-Carta recebida: 10♥
-Mao copas: [ 1♥ 2♥ 2♥ 4♥ 5♥ 6♥ 9♥ 9♥ 10♥ 11♥ 12♥ ] index: 11
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ 12♠ 13♠ ] index: 10
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ ] index: 11
-
-
-Descarte: 9♣
-Index Lixo: 37
-Topo do lixo: 9♣
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ 2♠ 3♣ 1♣ 9♣ index lixo: 38
-Carta do deque de compra: 3♥
-Carta recebida: 3♥
-Mao copas: [ 1♥ 2♥ 2♥ 3♥ 4♥ 5♥ 6♥ 9♥ 9♥ 10♥ 11♥ 12♥ ] index: 12
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 8♠ 10♠ 10♠ 11♠ 12♠ 13♠ ] index: 10
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ ] index: 11
-
-
-Descarte: Q♥
-Index Lixo: 38
-Topo do lixo: 12♥
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ 2♠ 3♣ 1♣ 9♣ 12♥ index lixo: 39
-Carta do deque de compra: 6♠
-Carta recebida: 6♠
-Mao copas: [ 1♥ 2♥ 2♥ 3♥ 4♥ 5♥ 6♥ 9♥ 9♥ 10♥ 11♥ 12♥ ] index: 12
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 6♠ 8♠ 10♠ 10♠ 11♠ 12♠ 13♠ ] index: 11
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ ] index: 11
-
-
-Descarte: 7♥
-Index Lixo: 39
-Topo do lixo: 7♥
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ 2♠ 3♣ 1♣ 9♣ 12♥ 7♥ index lixo: 40
-Carta do deque de compra: 8♥
-Carta recebida: 8♥
-Mao copas: [ 1♥ 2♥ 2♥ 3♥ 4♥ 5♥ 6♥ 8♥ 9♥ 9♥ 10♥ 11♥ 12♥ ] index: 13
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 6♠ 8♠ 10♠ 10♠ 11♠ 12♠ 13♠ ] index: 11
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ ] index: 11
-
-
-Descarte: 5♠
-Index Lixo: 40
-Topo do lixo: 5♠
-11♥ 5♦ 10♣ 13♥ 3♠ 3♠ 9♠ 11♠ 4♠ 7♠ 8♣ 9♦ 10♣ 9♦ 5♥ 13♠ 5♣ 7♥ 2♠ 5♣ 1♥ 10♦ 4♣ 8♠ 4♥ 11♣ 7♦ 11♦ 11♦ 1♣ 3♥ 11♣ 2♦ 7♣ 2♠ 3♣ 1♣ 9♣ 12♥ 7♥ 5♠ index lixo: 41
-Carta do deque de compra: K♣
-Carta recebida: 13♣
-Mao copas: [ 1♥ 2♥ 2♥ 3♥ 4♥ 5♥ 6♥ 8♥ 9♥ 9♥ 10♥ 11♥ 12♥ ] index: 13
-Mao ouro: [ 1♦ 1♦ 3♦ 3♦ 4♦ 4♦ 5♦ 6♦ 6♦ 7♦ 8♦ 8♦ 10♦ 12♦ 13♦ 13♦ ] index: 16
-Mao espadas: [ 1♠ 1♠ 4♠ 6♠ 6♠ 8♠ 10♠ 10♠ 11♠ 12♠ 13♠ ] index: 11
-Mao Paus: [ 2♣ 2♣ 3♣ 4♣ 6♣ 6♣ 8♣ 9♣ 12♣ 12♣ 13♣ 13♣ ] index: 12
+Mao copas: [ 9♥ 10♥ ] index: 2
+Mao ouro: [ 2♦ 8♦ ] index: 2
+Mao espadas: [ 4♠ 8♠ 9♠ 12♠ ] index: 4
+Mao Paus: [ 1♣ 5♣ 9♣ 10♣ 11♣ ] index: 5
 
 

@@ -17,6 +17,8 @@
 
 int indexCopas = 0, indexOuro = 0, indexPaus = 0, indexEspadas = 0, indexLixo = 0;
 
+char getDiscard[MAX_LINE];
+
 typedef struct cartas
 {
     int numero;
@@ -56,7 +58,8 @@ void bubblesortNaipes(Carta *mao, int index)
 char *puxar(Carta* lixo, Carta* maoCopas, Carta* maoOuro, Carta* maoEspadas, Carta* maoPaus)
 {
   int i;
-  char getDiscard[MAX_LINE];
+  FILE* puxarFile = fopen("puxe", "w");
+  fprintf(puxarFile, "Naipe: %s Valor: %d\n", lixo->naipe, lixo->numero);
 
   if((strcmp(lixo->naipe, "♥") == 0))
   {
@@ -155,7 +158,9 @@ char *puxar(Carta* lixo, Carta* maoCopas, Carta* maoOuro, Carta* maoEspadas, Car
     }
   }
 
-  return "GET_STOCK";
+  fclose(puxarFile);
+  strcpy(getDiscard, "GET_STOCK");
+  return getDiscard;
 }
 
 void valorCarta(char *carta, Carta *mao)
@@ -487,9 +492,10 @@ int main()
         //Envia a ação para puxar uma carta
 
         //Tratamento de qual puxe quer fazer
-        char *acaoPuxar = puxar(&lixo[indexLixo], maoCopas, maoOuro, maoEspadas, maoPaus);
+        char *acaoPuxar = puxar(&lixo[indexLixo - 1], maoCopas, maoOuro, maoEspadas, maoPaus);
 
         //Enviar qual puxe vai fazer
+        fprintf(saida, "%s\n", acaoPuxar);
         printf("%s\n", acaoPuxar);
 
 
@@ -527,7 +533,7 @@ int main()
         //
         
         //Descarta a carta que puxou
-        printf("DISCARD %s\n", line);
+        printf("DISCARD %d%s\n", maoOuro[0].numero,  maoOuro[0].naipe);
     }
 
     return 0;
