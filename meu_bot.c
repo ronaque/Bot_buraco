@@ -18,6 +18,7 @@
 int indexCopas = 0, indexOuro = 0, indexPaus = 0, indexEspadas = 0, indexLixo = 0;
 
 char getDiscard[MAX_LINE];
+char discardCard[MAX_LINE];
 
 typedef struct cartas
 {
@@ -53,114 +54,6 @@ void bubblesortNaipes(Carta *mao, int index)
             }
         }
     }
-}
-
-char *puxar(Carta* lixo, Carta* maoCopas, Carta* maoOuro, Carta* maoEspadas, Carta* maoPaus)
-{
-  int i;
-  FILE* puxarFile = fopen("puxe", "w");
-  fprintf(puxarFile, "Naipe: %s Valor: %d\n", lixo->naipe, lixo->numero);
-
-  if((strcmp(lixo->naipe, "♥") == 0))
-  {
-    for (i = 0; i < indexCopas; i++)
-    {
-      //Valor de lixo está entre 2 valores
-      if (lixo->numero == maoCopas[i].numero + 1 && lixo->numero == maoCopas[i + 1].numero - 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está depois dos 2 valores
-      else if (lixo->numero == maoCopas[i].numero + 2 && lixo->numero == maoCopas[i + 1].numero + 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está antes dos 2 valores
-      else if (lixo->numero == maoCopas[i].numero - 1 && lixo->numero == maoCopas[i + 1].numero - 2)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
-        return getDiscard;
-      }
-    }
-  }
-  if ((strcmp(lixo->naipe, "♦") == 0))
-  {
-    for (i = 0; i < indexOuro; i++)
-    {
-      //Valor de lixo está entre 2 valores
-      if (lixo->numero == maoOuro[i].numero + 1 && lixo->numero == maoOuro[i + 1].numero - 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está depois dos 2 valores
-      else if (lixo->numero == maoOuro[i].numero + 2 && lixo->numero == maoOuro[i + 1].numero + 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está antes dos 2 valores
-      else if (lixo->numero == maoOuro[i].numero - 1 && lixo->numero == maoOuro[i + 1].numero - 2)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
-        return getDiscard;
-      }
-    }
-  }
-  if ((strcmp(lixo->naipe, "♠") == 0))
-  {
-    for (i = 0; i < indexEspadas; i++)
-    {
-      //Valor de lixo está entre 2 valores
-      if (lixo->numero == maoEspadas[i].numero + 1 && lixo->numero == maoEspadas[i + 1].numero - 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está depois dos 2 valores
-      else if (lixo->numero == maoEspadas[i].numero + 2 && lixo->numero == maoEspadas[i + 1].numero + 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está antes dos 2 valores
-      else if (lixo->numero == maoEspadas[i].numero - 1 && lixo->numero == maoEspadas[i + 1].numero - 2)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
-        return getDiscard;
-      }
-    }
-  }
-  if ((strcmp(lixo->naipe, "♣") == 0))
-  {
-    for (i = 0; i < indexPaus; i++)
-    {
-      //Valor de lixo está entre 2 valores
-      if (lixo->numero == maoPaus[i].numero + 1 && lixo->numero == maoPaus[i + 1].numero - 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está depois dos 2 valores
-      else if (lixo->numero == maoPaus[i].numero + 2 && lixo->numero == maoPaus[i + 1].numero + 1)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
-        return getDiscard;
-      }
-      //Valor de lixo está antes dos 2 valores
-      else if (lixo->numero == maoPaus[i].numero - 1 && lixo->numero == maoPaus[i + 1].numero - 2)
-      {
-        sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
-        return getDiscard;
-      }
-    }
-  }
-
-  fclose(puxarFile);
-  strcpy(getDiscard, "GET_STOCK");
-  return getDiscard;
 }
 
 void valorCarta(char *carta, Carta *mao)
@@ -277,54 +170,571 @@ void printMaoNaipes(Carta *mao, Carta *maoCopas, Carta *maoOuro, Carta *maoEspad
 
 void verificacaoSequencias(Carta *mao, int index)
 {
+    int i;
+    int tamSequencia = 1;
+    int indexarrayMao = 0;
+    int arrayMao[index];
 
-  FILE* sequencias = fopen("sequencias", "w");
 
-  fprintf(sequencias, "Naipe: %s, Index: %d\n", mao->naipe, index);
-  
-  int i;
-  int tamSequencia = 1;
-  int indexarrayMao = 0;
-  int arrayMao[index];
 
-  for (i = 0; i < index; i++)
-  {
-      fprintf(sequencias, "%d%s ", mao[i].numero, mao[i].naipe);
-  }
-  fprintf(sequencias,"\n");
-
-  for (i = 0; i < index; i++)
-  {
-    if(mao[i].numero == mao[i + 1].numero - 1)
+    for (i = 0; i < index; i++)
     {
-      tamSequencia++;
-      arrayMao[indexarrayMao] = mao[i].numero;
-      indexarrayMao++;
-      if (mao[i + 2].numero == 0)
-      {
-        arrayMao[indexarrayMao] = mao[i + 1].numero;
-        indexarrayMao++;
-      }
+        if (mao[i].numero == mao[i + 1].numero - 1)
+        {
+            tamSequencia++;
+            arrayMao[indexarrayMao] = mao[i].numero;
+            indexarrayMao++;
+            if (mao[i + 2].numero == 0)
+            {
+                arrayMao[indexarrayMao] = mao[i + 1].numero;
+                indexarrayMao++;
+            }
+        }
+        else
+        {
+            if (tamSequencia > 3)
+            {
+                //Formar jogo na mesa
+            }
+            else
+            {
+                tamSequencia = 0;
+                indexarrayMao = 0;
+            }
+        }
+    }
+}
+
+char checarValor(int valor)
+{
+    if (valor == 1)
+    {
+      return 'A';
+    }
+    else if(valor == 10)
+    {
+      return '1';
+    }
+    else if(valor == 11)
+    {
+      return 'J';
+    }
+    else if(valor == 12)
+    {
+      return 'Q';
+    }
+    else if (valor == 13)
+    {
+      return 'K';
     }
     else{
-      if (tamSequencia > 3)
+      return valor + '0';
+    }
+}
+
+char *descartar(Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPaus)
+{
+    int i;
+    int distanciaD, distanciaE, maiorDistanciaD, indexDistancia;
+
+    char valor;
+
+    FILE* saida = fopen("descarte", "w");
+
+    //Procurar por cartas iguais
+      //Cartas iguais copas
+      for (i = 0; i < indexCopas; i++)
       {
-        //Formar jogo na mesa
+          if (maoCopas[i].numero == maoCopas[i + 1].numero)
+          {
+            fprintf(saida,"cartas iguais copas");
+            valor = checarValor(maoCopas[i].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoCopas[i].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoCopas[i].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
       }
-      else{
-      tamSequencia = 0;
-      indexarrayMao = 0;
+      //Cartas iguais Ouro
+      for (i = 0; i < indexOuro; i++)
+      {
+          if (maoOuro[i].numero == maoOuro[i + 1].numero)
+          {
+            fprintf(saida,"cartas iguais ouro");
+            valor = checarValor(maoOuro[i].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoOuro[i].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoOuro[i].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
+      }
+      //Cartas iguais Espadas
+      for (i = 0; i < indexEspadas; i++)
+      {
+          if (maoEspadas[i].numero == maoEspadas[i + 1] .numero)
+          {
+            fprintf(saida,"cartas iguais espadas");
+            valor = checarValor(maoEspadas[i].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoEspadas[i].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoEspadas[i].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
+      }
+      //Cartas iguais Paus
+      for (i = 0; i < indexPaus; i++)
+      {
+          if (maoPaus[i].numero == maoPaus[i + 1].numero)
+          {
+            fprintf(saida,"cartas iguais paus");
+            valor = checarValor(maoPaus[i].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoPaus[i].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoPaus[i].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
+      }
+    //
+
+    //Se não houver cartas iguais, retire carta do menor index
+      //Menor index Copas
+      if (indexCopas < indexOuro && indexCopas <  indexEspadas && indexCopas < indexPaus && indexCopas > 0)
+      {
+          if (indexCopas == 1)
+          {
+            fprintf(saida,"index copas 1");
+            valor = checarValor(maoCopas[0].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoCopas[0].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoCopas[0].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
+          else
+          {
+              for (i = 0; i < indexCopas; i++)
+              {
+                  distanciaD = maoCopas[i + 1].numero -   maoCopas[i].numero;
+                  distanciaE = maoCopas[i].numero - maoCopas  [i - 1].numero;
+                  if (maiorDistanciaD < distanciaD &&   distanciaE > 1)
+                  {
+                      maiorDistanciaD = distanciaD;
+                      indexDistancia = i;
+                  }
+                  else if (maiorDistanciaD < distanciaD)
+                  {
+                      indexDistancia = i + 1;
+                  }
+                  else{
+                    indexDistancia = i;
+                  }
+              }
+          }
+          fprintf(saida,"valor distante copas\n");
+          valor = checarValor(maoCopas[indexDistancia].numero);
+          if(valor == '1'){
+            sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoCopas[indexDistancia].naipe);
+          }
+          else{
+          sprintf(discardCard, "DISCARD %c%s",valor,maoCopas[indexDistancia].naipe);
+          }
+          // fprintf(saida, "%s", discardCard);
+          fclose(saida);
+          return discardCard;
+      }
+      //Menor index Ouro
+      else if (indexOuro < indexCopas && indexOuro <  indexEspadas && indexOuro < indexPaus && indexOuro > 0)
+      {
+          if (indexOuro == 1)
+          {
+            fprintf(saida,"index ouro 1");
+            valor = checarValor(maoOuro[0].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoOuro[0].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoOuro[0].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
+          else
+          {
+              for (i = 0; i < indexOuro; i++)
+              {
+                  distanciaD = maoOuro[i + 1].numero -  maoOuro[i].numero;
+                  distanciaE = maoOuro[i].numero - maoOuro[i  - 1].numero;
+                  if (maiorDistanciaD < distanciaD &&   distanciaE > 1)
+                  {
+                      maiorDistanciaD = distanciaD;
+                      indexDistancia = i;
+                  }
+                  else if (maiorDistanciaD < distanciaD)
+                  {
+                      indexDistancia = i + 1;
+                  }
+                  else{
+                    indexDistancia = i;
+                  }
+              }
+          }
+          fprintf(saida,"valor distante ouro");
+          valor = checarValor(maoOuro[indexDistancia].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoOuro[indexDistancia].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoOuro[indexDistancia].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+      }
+      //Menor index Espadas
+      else if (indexEspadas < indexOuro && indexEspadas <   indexCopas && indexEspadas < indexPaus && indexEspadas > 0)
+      {
+          if (indexEspadas == 1)
+          {
+            fprintf(saida,"index espadas 1");
+            valor = checarValor(maoEspadas[0].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoEspadas[0].naipe);
+            }
+            else{
+              sprintf(discardCard, "DISCARD %c%s",valor, maoEspadas[0].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
+          else
+          {
+              for (i = 0; i < indexEspadas; i++)
+              {
+                  distanciaD = maoEspadas[i + 1].numero -   maoEspadas[i].numero;
+                  distanciaE = maoEspadas[i].numero -   maoEspadas[i - 1].numero;
+                  if (maiorDistanciaD < distanciaD &&   distanciaE > 1)
+                  {
+                      maiorDistanciaD = distanciaD;
+                      indexDistancia = i;
+                  }
+                  else if (maiorDistanciaD < distanciaD)
+                  {
+                      indexDistancia = i + 1;
+                  }
+                  else{
+                    indexDistancia = i;
+                  }
+              }
+          }
+          fprintf(saida,"valor distante espadas");
+          valor = checarValor(maoEspadas[indexDistancia].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoEspadas[indexDistancia].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoEspadas[indexDistancia].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+      }
+      //Menor index Paus
+      else if (indexPaus < indexOuro && indexPaus <   indexEspadas && indexPaus < indexCopas && indexPaus > 0)
+      {
+          if (indexPaus == 1)
+          {
+            fprintf(saida,"index paus 1");
+            valor = checarValor(maoPaus[0].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoPaus[0].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoPaus[0].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+          }
+          else
+          {
+              for (i = 0; i < indexPaus; i++)
+              {
+                  distanciaD = maoPaus[i + 1].numero -  maoPaus[i].numero;
+                  distanciaE = maoPaus[i].numero - maoPaus[i  - 1].numero;
+                  if (maiorDistanciaD < distanciaD &&   distanciaE > 1)
+                  {
+                      maiorDistanciaD = distanciaD;
+                      indexDistancia = i;
+                  }
+                  else if (maiorDistanciaD < distanciaD)
+                  {
+                      indexDistancia = i + 1;
+                  }
+                  else{
+                    indexDistancia = i;
+                  }
+              }
+          }
+          fprintf(saida,"valor distante paus");
+          valor = checarValor(maoPaus[indexDistancia].numero);
+            if(valor == '1'){
+              sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoPaus[indexDistancia].naipe);
+            }
+            else{
+            sprintf(discardCard, "DISCARD %c%s",valor, maoPaus[indexDistancia].naipe);
+            }
+            fclose(saida);
+            return discardCard;
+      }
+    //
+    fprintf(saida, "nada");
+
+    valor = checarValor(maoCopas[0].numero);
+    if(valor == '1'){
+      sprintf(discardCard, "DISCARD %c%c%s",valor, '0', maoCopas[0].naipe);
+    }
+    else{
+    sprintf(discardCard, "DISCARD %c%s",valor, maoCopas[0].naipe);
+    }
+
+    fclose(saida);
+    return discardCard;
+}
+
+char *puxar(Carta *lixo, Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPaus)
+{
+    int i;
+
+    if ((strcmp(lixo->naipe, "♥") == 0))
+    {
+        for (i = 0; i < indexCopas; i++)
+        {
+            //Valor de lixo está entre 2 valores
+            if (lixo->numero == maoCopas[i].numero + 1 && lixo->numero == maoCopas[i + 1].numero - 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está depois dos 2 valores
+            else if (lixo->numero == maoCopas[i].numero + 2 && lixo->numero == maoCopas[i + 1].numero + 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está antes dos 2 valores
+            else if (lixo->numero == maoCopas[i].numero - 1 && lixo->numero == maoCopas[i + 1].numero - 2)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoCopas[i].numero, maoCopas[i].naipe, maoCopas[i + 1].numero, maoCopas[i + 1].naipe);
+                return getDiscard;
+            }
+        }
+    }
+    if ((strcmp(lixo->naipe, "♦") == 0))
+    {
+        for (i = 0; i < indexOuro; i++)
+        {
+            //Valor de lixo está entre 2 valores
+            if (lixo->numero == maoOuro[i].numero + 1 && lixo->numero == maoOuro[i + 1].numero - 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está depois dos 2 valores
+            else if (lixo->numero == maoOuro[i].numero + 2 && lixo->numero == maoOuro[i + 1].numero + 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está antes dos 2 valores
+            else if (lixo->numero == maoOuro[i].numero - 1 && lixo->numero == maoOuro[i + 1].numero - 2)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoOuro[i].numero, maoOuro[i].naipe, maoOuro[i + 1].numero, maoOuro[i + 1].naipe);
+                return getDiscard;
+            }
+        }
+    }
+    if ((strcmp(lixo->naipe, "♠") == 0))
+    {
+        for (i = 0; i < indexEspadas; i++)
+        {
+            //Valor de lixo está entre 2 valores
+            if (lixo->numero == maoEspadas[i].numero + 1 && lixo->numero == maoEspadas[i + 1].numero - 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está depois dos 2 valores
+            else if (lixo->numero == maoEspadas[i].numero + 2 && lixo->numero == maoEspadas[i + 1].numero + 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está antes dos 2 valores
+            else if (lixo->numero == maoEspadas[i].numero - 1 && lixo->numero == maoEspadas[i + 1].numero - 2)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoEspadas[i].numero, maoEspadas[i].naipe, maoEspadas[i + 1].numero, maoEspadas[i + 1].naipe);
+                return getDiscard;
+            }
+        }
+    }
+    if ((strcmp(lixo->naipe, "♣") == 0))
+    {
+        for (i = 0; i < indexPaus; i++)
+        {
+            //Valor de lixo está entre 2 valores
+            if (lixo->numero == maoPaus[i].numero + 1 && lixo->numero == maoPaus[i + 1].numero - 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está depois dos 2 valores
+            else if (lixo->numero == maoPaus[i].numero + 2 && lixo->numero == maoPaus[i + 1].numero + 1)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
+                return getDiscard;
+            }
+            //Valor de lixo está antes dos 2 valores
+            else if (lixo->numero == maoPaus[i].numero - 1 && lixo->numero == maoPaus[i + 1].numero - 2)
+            {
+                sprintf(getDiscard, "GET_DISCARD [ %d%s %d%s ]", maoPaus[i].numero, maoPaus[i].naipe, maoPaus[i + 1].numero, maoPaus[i + 1].naipe);
+                return getDiscard;
+            }
+        }
+    }
+
+    strcpy(getDiscard, "GET_STOCK");
+    return getDiscard;
+}
+
+void retirarDescarte(char* descartado, Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPaus)
+{
+  int i;
+  int valorDescarte, descarteUnico = 0, aux;
+
+  char valor;
+  char lixoBuffer;
+  char naipeAtual[5];
+  descartado = strtok(descartado, " ");
+  descartado =strtok(NULL, " ");
+
+  sscanf(descartado, "%c", &valor);
+
+  if (valor == '1')
+    {
+        //Recebe o valor (1), um lixoBuffer (0), e o naipeAtual
+        sscanf(descartado, "%c %c %s", &valor, &lixoBuffer, naipeAtual);
+    }
+    else
+    {
+        //Recebe somente o valor e o naipeAtual
+        sscanf(descartado, "%c %s", &valor, naipeAtual);
+    }
+
+    if (valor == '1')
+    {
+       valorDescarte = 10;
+    }
+    else if (valor == 'A')
+    {
+       valorDescarte = 1;
+    }
+    else if (valor == 'J')
+    {
+       valorDescarte = 11;
+    }
+    else if (valor == 'Q')
+    {
+       valorDescarte = 12;
+    }
+    else if (valor == 'K')
+    {
+       valorDescarte = 13;
+    }
+    else
+    {
+       valorDescarte = valor - '0';
+    }
+
+    if ((strcmp(naipeAtual, "♥") == 0))
+    {
+      for (i = 0; i < indexCopas; i++)
+      {
+        if(valorDescarte == maoCopas[i].numero && descarteUnico == 0)
+        {
+          maoCopas[i].numero = 0;
+          bubblesortNaipes(maoCopas, indexCopas);
+          descarteUnico = 1;
+        }
+      }
+      for (i = 0; i < indexCopas; i++)
+      {
+        maoCopas[i].numero = maoCopas[i + 1].numero;
       }
     }
-  }
-  fprintf(sequencias, "Tamanho da sequencia: %d\n", tamSequencia);
-
-  for(i = 0; i < indexarrayMao; i++)
-  {
-    fprintf(sequencias, "%d ", arrayMao[i]);
-  }
-
-  fclose(sequencias);
+    if ((strcmp(naipeAtual, "♦") == 0))
+    {
+      for (i = 0; i < indexOuro; i++)
+      {
+        if(valorDescarte == maoOuro[i].numero && descarteUnico == 0)
+        {
+          maoOuro[i].numero = 0;
+          bubblesortNaipes(maoOuro, indexOuro);
+          descarteUnico = 1;
+        }
+      }
+      for (i = 0; i < indexOuro; i++)
+      {
+        maoOuro[i].numero = maoOuro[i + 1].numero;
+      }
+    }
+    if ((strcmp(naipeAtual, "♠") == 0))
+    {
+      for (i = 0; i < indexEspadas; i++)
+      {
+        if(valorDescarte == maoEspadas[i].numero && descarteUnico == 0)
+        {
+          maoEspadas[i].numero = 0;
+          bubblesortNaipes(maoEspadas, indexEspadas);
+          descarteUnico = 1;
+        }
+      }
+      for (i = 0; i < indexEspadas; i++)
+      {
+        maoEspadas[i].numero = maoEspadas[i + 1].numero;
+      }
+    }
+    if ((strcmp(naipeAtual, "♣") == 0))
+    {
+      for (i = 0; i < indexPaus; i++)
+      {
+        if(valorDescarte == maoPaus[i].numero && descarteUnico == 0)
+        {
+          maoPaus[i].numero = 0;
+          bubblesortNaipes(maoPaus, indexPaus);
+          descarteUnico = 1;
+        }
+      }
+      for (i = 0; i < indexPaus; i++)
+      {
+        maoPaus[i].numero = maoPaus[i + 1].numero;
+      }
+    }
 }
 
 int main()
@@ -468,7 +878,6 @@ int main()
                 fprintf(saida, "Descarte: %s\n", descarte);
 
                 lixo = realloc(lixo, sizeof(Carta) * (indexLixo + 1));
-                fprintf(saida, "Index Lixo: %d\n", indexLixo);
                 valorCarta(descarte, &lixo[indexLixo]);
 
                 fprintf(saida, "Topo do lixo: %d%s\n", lixo[indexLixo].numero, lixo[indexLixo].naipe);
@@ -498,43 +907,77 @@ int main()
         fprintf(saida, "%s\n", acaoPuxar);
         printf("%s\n", acaoPuxar);
 
-
         //Puxar do deque de compra
-          //Recebe a carta do deque de compra
-          readline(line);
-          fprintf(saida, "Carta do deque de compra: %s\n",  line);
+        //Recebe a carta do deque de compra
+        readline(line);
+        fprintf(saida, "Carta do deque de compra: %s\n", line);
 
-          //Recebimento da carta para a mão geral
-          mao = realloc(mao, sizeof(Carta) * 1);
-          valorCarta(line, &mao[0]);
-          fprintf(saida, "Carta recebida: %d%s\n", mao[0] .numero, mao[0].naipe);
+        //Recebimento da carta para a mão geral
+        mao = malloc(sizeof(Carta) * 1);
+        valorCarta(line, &mao[0]);
+        fprintf(saida, "Carta recebida: %d%s\n", mao[0].numero, mao[0].naipe);
 
-          //Separação da carta recebida para o naipe  correspondente
-          maoCopas = realloc(maoCopas, sizeof(Carta) *  (indexCopas + 1));
-          maoOuro = realloc(maoOuro, sizeof(Carta) *  (indexOuro + 1));
-          maoEspadas = realloc(maoEspadas, sizeof(Carta) *  (indexEspadas + 1));
-          maoPaus = realloc(maoPaus, sizeof(Carta) *  (indexPaus + 1));
+        //Separação da carta recebida para o naipe  correspondente
+        maoCopas = realloc(maoCopas, sizeof(Carta) * (indexCopas + 1));
+        maoOuro = realloc(maoOuro, sizeof(Carta) * (indexOuro + 1));
+        maoEspadas = realloc(maoEspadas, sizeof(Carta) * (indexEspadas + 1));
+        maoPaus = realloc(maoPaus, sizeof(Carta) * (indexPaus + 1));
 
-          tratamentoNaipe(&mao[0], maoCopas, maoOuro,   maoEspadas, maoPaus);
+        tratamentoNaipe(&mao[0], maoCopas, maoOuro, maoEspadas, maoPaus);
 
-          //Ordenação das mãos de cada naipe
-          bubblesortNaipes(maoCopas, indexCopas);
-          bubblesortNaipes(maoOuro, indexOuro);
-          bubblesortNaipes(maoEspadas, indexEspadas);
-          bubblesortNaipes(maoPaus, indexPaus);
-          //
-
-          //Print das mãos
-          printMaoNaipes(&mao[i], maoCopas, maoOuro,  maoEspadas, maoPaus, saida);
-
-          fprintf(saida, "\n");
-          fprintf(saida, "\n");
-
+        //Ordenação das mãos de cada naipe
+        bubblesortNaipes(maoCopas, indexCopas);
+        bubblesortNaipes(maoOuro, indexOuro);
+        bubblesortNaipes(maoEspadas, indexEspadas);
+        bubblesortNaipes(maoPaus, indexPaus);
         //
-        
-        //Descarta a carta que puxou
-        printf("DISCARD %d%s\n", maoOuro[0].numero,  maoOuro[0].naipe);
-    }
 
+        //Print das mãos
+        printMaoNaipes(&mao[i], maoCopas, maoOuro, maoEspadas, maoPaus, saida);
+
+        fprintf(saida, "\n");
+        fprintf(saida, "\n");
+        //
+
+        //Descarta a carta que puxou
+        char *acaoDescarte = descartar(maoCopas, maoOuro, maoEspadas, maoPaus);
+        fprintf(saida, "Carta descartada: %s\n", acaoDescarte);
+        printf("%s\n", acaoDescarte);
+
+        // retirarDescarte(acaoDescarte, maoCopas, maoOuro, maoEspadas, maoPaus);
+        // sscanf(acaoDescarte, "%c", &valor);
+
+        // if (valor == '1')
+        // {
+        //     //Recebe o valor (1), um lixoBuffer (0), e o    naipeAtual
+        //     sscanf(acaoDescarte, "%c %c %s", &valor, &    lixoBuffer, naipeAtual);
+        // }
+        // else
+        // {
+        //     //Recebe somente o valor e o naipeAtual
+        //     sscanf(acaoDescarte, "%c %s", &valor, naipeAtual);
+        // }
+        // if ((strcmp(naipeAtual, "♥") == 0))
+        // {
+        //   indexCopas--;
+        //   maoCopas = realloc(maoCopas, sizeof(Carta) * indexCopas);
+        // }
+        // if ((strcmp(naipeAtual, "♦") == 0))
+        // {
+        //   indexOuro--;
+        //   maoOuro = realloc(maoOuro, sizeof(Carta) * indexOuro);
+        // }
+        // if ((strcmp(naipeAtual, "♠") == 0))
+        // {
+        //   indexEspadas--;
+        //   maoEspadas = realloc(maoEspadas, sizeof(Carta) * indexEspadas);
+        // }
+        // if ((strcmp(naipeAtual, "♣") == 0))
+        // {
+        //   indexPaus--;
+        //   maoPaus = realloc(maoPaus, sizeof(Carta) * indexPaus);
+        // }
+
+    }
     return 0;
 }
