@@ -1,7 +1,7 @@
-/** Tamanho máximo de uma linha da entrada-padrão */
-#define MAX_LINE 200
+#ifndef DEF
+#define DEF
 
-/** Tamanho máximo do identificador do bot */
+#define MAX_LINE 200
 #define ID_SIZE 20
 
 int indexCopas = 0, indexOuro = 0, indexPaus = 0, indexEspadas = 0, indexLixo = 0;
@@ -14,3 +14,5 @@ typedef struct cartas
     int numero;
     char naipe[5];
 } Carta;
+
+#endif

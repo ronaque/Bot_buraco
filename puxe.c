@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "def.h"
+
 char *puxar(Carta *lixo, Carta *maoCopas, Carta *maoOuro, Carta *maoEspadas, Carta *maoPaus)
 {
     int i;

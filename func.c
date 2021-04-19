@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "def.h"
+
 void bubblesortNaipes(Carta *mao, int index)
 {
     Carta aux;
